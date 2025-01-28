@@ -26,17 +26,10 @@ public enum ExceptionStatus {
 
     WRONG_DATE(400, "현재보다 과거의 날짜입니다. 현재 혹은 미래의 날짜로 다시 입력하세요."),
 
-    ALREADY_VOTED(409, "이미 투표하였습니다."),
-    EXPIRED_VOTE_DATE(410, "투표 기간이 지나 더 이상 투표할 수 없습니다."),
-
     /**
-     * interview
+     * Personal Color Analysis
      */
-    WRONG_INTERVIEW(404, "선택한 인터뷰가 존재하지 않습니다."),
-    WRONG_SKILL(404, "SKILL이 존재하지 않습니다."),
-    WRONG_CATEGORY(404, "질문 카테고리가 존재하지 않습니다."),
-    WRONG_SESSION(404, "인터뷰 세션이 존재하지 않습니다.")
-    ;
+    SERVER_ERROR_PERSONAL_COLOR(500, "퍼스널 컬러 분석 과정에서 문제가 발생했습니다.");
 
     private final int StatusCode;
     private final String message;

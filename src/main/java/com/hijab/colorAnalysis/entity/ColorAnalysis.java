@@ -1,10 +1,10 @@
-﻿/**
+/**
  * ColorAnalysisJob ↔ ColorAnalysis
  *
  * 하나의 요청은 하나의 결과를 가짐.
  * 관계: 1:1
  */
-package com.hijab.colorAnalysis;
+package com.hijab.colorAnalysis.entity;
 
 import com.hijab.common.audit.Auditing;
 import jakarta.persistence.*;

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ColorAnalysis ↔ ColorPalette
  *
  * 분석 결과에 따라 추천된 퍼스널컬러와 색상 팔레트를 연결.

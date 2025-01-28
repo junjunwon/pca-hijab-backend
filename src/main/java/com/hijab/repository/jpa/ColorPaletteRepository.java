@@ -1,4 +1,4 @@
-﻿package com.hijab.repository.jpa;
+package com.hijab.repository.jpa;
 
 import com.hijab.colorPalette.ColorPalette;
 import org.springframework.data.jpa.repository.JpaRepository;

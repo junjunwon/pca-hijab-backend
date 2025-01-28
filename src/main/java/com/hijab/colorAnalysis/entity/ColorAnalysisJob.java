@@ -1,10 +1,10 @@
-﻿/**
+/**
  * User ↔ ColorAnalysisJob
  *
  * 한 사용자는 여러 번 분석 요청을 보낼 수 있음.
  * 관계: 1:N
  */
-package com.hijab.colorAnalysis;
+package com.hijab.colorAnalysis.entity;
 
 import com.hijab.common.audit.Auditing;
 import com.hijab.user.entity.User;
@@ -40,7 +40,7 @@ public class ColorAnalysisJob extends Auditing {
 
     private LocalDateTime completedAt;
 
-    @OneToOne(mappedBy = "analysisRequest", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(mappedBy = "colorAnalysisJob", cascade = CascadeType.ALL, orphanRemoval = true)
     private ColorAnalysis colorAnalysis;
 
     public enum AnalysisStatus {

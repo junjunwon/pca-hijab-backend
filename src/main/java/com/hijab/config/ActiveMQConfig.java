@@ -46,14 +46,14 @@ public class ActiveMQConfig {
         factory.setConcurrency("10-50"); // 동시 처리 리스너 수 설정
 
         factory.setConnectionFactory(connectionFactory());
-        factory.setMessageConverter(messageConverter);
+//        factory.setMessageConverter(messageConverter);
         return factory;
     }
 
     @Bean
     public ConnectionFactory connectionFactory() {
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(borkerUrl);
-        activeMQConnectionFactory.setTrustedPackages(Arrays.asList("com.codingtest.activemq.message", "com.codingtest.notification.request"));
+        activeMQConnectionFactory.setTrustedPackages(Arrays.asList("com.hijab.common.activemq.message"));
         return activeMQConnectionFactory;
     }
 

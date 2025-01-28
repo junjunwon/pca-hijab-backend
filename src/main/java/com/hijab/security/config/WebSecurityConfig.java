@@ -67,9 +67,9 @@ public class WebSecurityConfig implements WebMvcConfigurer {
             .authenticationManager(authenticationManager)
             .authorizeHttpRequests(
                 registry -> registry
-//                    .requestMatchers("/**").permitAll()
-//                    .requestMatchers("/api/*").permitAll()
-//                    .requestMatchers("/api/**").permitAll()
+                    .requestMatchers("/**").permitAll()
+                    .requestMatchers("/api/*").permitAll()
+                    .requestMatchers("/api/**").permitAll()
                     .requestMatchers("/", "/index.html", "/static/**", "/static/img/**").permitAll()
                     .requestMatchers("/api/public/**").permitAll()
                     .requestMatchers("/api/health").permitAll()
