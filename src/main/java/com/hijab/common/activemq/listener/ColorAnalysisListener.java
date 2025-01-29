@@ -22,8 +22,8 @@ public class ColorAnalysisListener {
         MultipartFile multipartFile = payload.data();
         try {
             log.info("발송서버로 알림 발송 시도....");
-            String resultPca = pcaClient.uploadFile(multipartFile);
-            log.info("발송서버로부터 전달받은 결과값 : {}", resultPca);
+//            String resultPca = pcaClient.analyzePersonalColor(multipartFile);
+//            log.info("발송서버로부터 전달받은 결과값 : {}", resultPca);
         } catch (CustomException e) {
             // 실패한 메시지를 재시도하거나 다른 큐에 저장할 수 있습니다.
             log.error("알림발송 실패", e);

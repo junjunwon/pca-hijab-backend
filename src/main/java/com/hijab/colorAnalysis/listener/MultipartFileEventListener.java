@@ -21,8 +21,8 @@ public class MultipartFileEventListener {
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
     public void MultipartFileEventListener(MultipartFileEvent event) {
         MessagePayload<MultipartFile> payload = event.getPayload();
-        String resultPca = pcaClient.uploadFile(payload.data());
-        System.out.println("발송서버로부터 전달받은 결과값 : " + resultPca);
+//        String resultPca = pcaClient.analyzePersonalColor(payload.data());
+//        System.out.println("발송서버로부터 전달받은 결과값 : " + resultPca);
 //        jmsTemplate.convertAndSend("multipartAnalysisQueue", payload);
     }
 }

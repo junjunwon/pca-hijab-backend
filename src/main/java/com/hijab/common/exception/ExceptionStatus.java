@@ -29,7 +29,8 @@ public enum ExceptionStatus {
     /**
      * Personal Color Analysis
      */
-    SERVER_ERROR_PERSONAL_COLOR(500, "퍼스널 컬러 분석 과정에서 문제가 발생했습니다.");
+    SERVER_ERROR_PERSONAL_COLOR(500, "퍼스널 컬러 분석 과정에서 문제가 발생했습니다."),
+    NOT_FOUND_PERSONAL_COLOR(404, "퍼스널 컬러 분석 결과를 찾을 수 없습니다."),;
 
     private final int StatusCode;
     private final String message;

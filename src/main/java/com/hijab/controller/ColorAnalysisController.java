@@ -1,6 +1,7 @@
 package com.hijab.controller;
 
 import com.hijab.colorAnalysis.service.ColorAnalysisJobService;
+import com.hijab.colorPalette.model.ColorPaletteResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,9 +17,8 @@ public class ColorAnalysisController {
 
     private final ColorAnalysisJobService colorAnalysisJobService;
     @PostMapping
-    public ResponseEntity<String> analyzeImage(@RequestParam("email") String email,
-                                             @RequestParam("image") MultipartFile image) {
-        String resultPca = colorAnalysisJobService.analyzeImage(email, image);
-        return ResponseEntity.ok(resultPca);
+    public ResponseEntity<ColorPaletteResponse> analyzeImage(@RequestParam("email") String email,
+                                                             @RequestParam("image") MultipartFile image) {
+        return ResponseEntity.ok(colorAnalysisJobService.analyzeImage(email, image));
     }
 }
