@@ -1,4 +1,4 @@
-package com.hijab.image.service;
+package com.hijab.image.dao;
 
 import com.hijab.repository.dynamo.ImageRepository;
 import com.hijab.image.entity.Image;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ImageDAOService {
+public class ImageDAOImpl {
 
     private final ImageRepository imageRepository;
 

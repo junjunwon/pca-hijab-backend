@@ -13,9 +13,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Comment;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -33,9 +31,11 @@ public class ColorPalette extends Auditing {
     @Enumerated(value = EnumType.STRING)
     private PersonalColor personalColor;
 
-    @Comment("색상 코드 배열 (JSON 배열 형태)")
-    @Lob
-    private String colors; // JSON 형태의 색상 배열 저장
+    @Comment("색상 코드")
+    @ElementCollection
+    @CollectionTable(name = "color_palette_colors", joinColumns = @JoinColumn(name = "palette_id"))
+    @Column(name = "color_code")
+    private List<String> colors = new ArrayList<>();
 
     @Comment("팔레트 설명")
     private String description;
@@ -55,10 +55,7 @@ public class ColorPalette extends Auditing {
 
         private static final Map<String, PersonalColor> VALUE_MAP = Collections.unmodifiableMap(
                 Arrays.stream(values())
-                        .collect(Collectors.toMap(
-                                PersonalColor::getName,
-                                Function.identity()
-                        ))
+                        .collect(Collectors.toMap(PersonalColor::getName, Function.identity()))
         );
 
         public static PersonalColor fromValue(String name) {

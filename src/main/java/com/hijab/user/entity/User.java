@@ -1,6 +1,6 @@
 package com.hijab.user.entity;
 
-import com.hijab.colorAnalysis.entity.ColorAnalysisJob;
+import com.hijab.colorAnalysis.entity.temp.ColorAnalysisJob;
 import com.hijab.common.audit.AuditingAt;
 import jakarta.persistence.*;
 import lombok.AccessLevel;

@@ -1,7 +1,7 @@
 package com.hijab.controller;
 
 import com.hijab.image.model.ImageResponseDto;
-import com.hijab.image.service.ImageService;
+import com.hijab.image.service.ImageServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,22 +13,22 @@ import java.util.List;
 @RequestMapping("/api/image")
 @RequiredArgsConstructor
 public class ImageController {
-    private final ImageService imageService;
+    private final ImageServiceImpl imageServiceImpl;
 
     @PostMapping("/upload")
     public ResponseEntity<ImageResponseDto> uploadImage(@RequestParam("file") MultipartFile file) {
-        ImageResponseDto imageResponseDto  = imageService.saveImage(file);
+        ImageResponseDto imageResponseDto  = imageServiceImpl.saveImageToS3(file);
         return ResponseEntity.ok(imageResponseDto);
     }
 
     @GetMapping
     public ResponseEntity<List<ImageResponseDto>> getAllImages() {
-        return ResponseEntity.ok(imageService.getAllImages());
+        return ResponseEntity.ok(imageServiceImpl.getAllImages());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ImageResponseDto> getImageById(@PathVariable String id) {
-        ImageResponseDto imageResponseDto = imageService.getImageById(id);
+        ImageResponseDto imageResponseDto = imageServiceImpl.getImageById(id);
         return ResponseEntity.ok(imageResponseDto);
     }
 }

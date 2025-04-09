@@ -4,14 +4,18 @@
  * 하나의 요청은 하나의 결과를 가짐.
  * 관계: 1:1
  */
-package com.hijab.colorAnalysis.entity;
+package com.hijab.colorAnalysis.entity.temp;
 
+import com.hijab.colorPalette.entity.ColorPalette;
 import com.hijab.common.audit.Auditing;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Comment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Entity
@@ -39,10 +43,13 @@ public class ColorAnalysis extends Auditing {
     private String hairColor;
 
     @Comment("추천된 퍼스널컬러 (봄, 여름 등)")
+    @Enumerated(value = EnumType.STRING)
     @Column(nullable = false)
-    private String personalColor;
+    private ColorPalette.PersonalColor personalColor;
 
-    @Comment("추천된 색상 팔레트 (JSON 배열 형태)")
-    @Lob
-    private String palette; // JSON 형태의 색상 팔레트 저장
+    @Comment("추천된 색상 팔레트")
+    @ElementCollection
+    @CollectionTable(name = "color_analysis_palette", joinColumns = @JoinColumn(name = "analysis_id"))
+    @Column(name = "color_code")
+    private List<String> palette = new ArrayList<>();
 }

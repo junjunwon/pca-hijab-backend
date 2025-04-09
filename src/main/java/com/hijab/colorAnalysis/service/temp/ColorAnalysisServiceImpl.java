@@ -1,4 +1,4 @@
-package com.hijab.colorAnalysis.service;
+package com.hijab.colorAnalysis.service.temp;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

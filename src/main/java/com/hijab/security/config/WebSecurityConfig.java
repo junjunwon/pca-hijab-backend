@@ -107,7 +107,7 @@ public class WebSecurityConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-            .allowedOrigins("http://52.78.114.159", "http://localhost", "https://myinterviewscoach.com")
+            .allowedOrigins("http://52.78.114.159", "http://localhost", "https://polite-multiply-dragon.ngrok-free.app", "https://myinterviewscoach.com")
             .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD")
             .allowedOriginPatterns("*")
             .allowedHeaders("Authorization", "Content-Type");

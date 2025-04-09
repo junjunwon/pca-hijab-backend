@@ -1,13 +1,11 @@
 package com.hijab.colorAnalysis.model;
 
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.web.multipart.MultipartFile;
 
 @Getter
+@Setter
 public class ColorAnalysisRequest {
-    private final MultipartFile image;
-
-    public ColorAnalysisRequest(MultipartFile image) {
-        this.image = image;
-    }
+    private MultipartFile image;
 }
