@@ -35,7 +35,7 @@ public class ColorAnalysisJobServiceImpl implements ColorAnalysisJobService {
 //        MessagePayload<MultipartFile> messagePayload = new MessagePayload<>(image);
 //        publisher.publishEvent(new MultipartFileEvent(messagePayload));
 
-        return new ColorPaletteResponse(colorPalette.getPersonalColor().getName(), colorPalette.getDescription());
+        return new ColorPaletteResponse(Boolean.TRUE, colorPalette.getPersonalColor().getName(), colorPalette.getDescription());
 
     }
 }

@@ -1,8 +1,10 @@
 package com.hijab.kafka.message;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
+@NoArgsConstructor
 public class KafkaMessageEnvelope {
     private MessageType type; // 예: "COLOR_ANALYSIS", "NOTIFICATION"
     private Object payload;

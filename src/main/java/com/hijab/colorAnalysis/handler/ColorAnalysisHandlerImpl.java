@@ -28,6 +28,6 @@ public class ColorAnalysisHandlerImpl implements ColorAnalysisHandler {
         ColorPalette.PersonalColor color = ColorPalette.PersonalColor.fromValue(response.result());
         ColorPalette colorPalette = colorPaletteDAO.getColorPalette(color);
 
-        return new ColorPaletteResponse(colorPalette.getPersonalColor().getName(), colorPalette.getDescription());
+        return new ColorPaletteResponse(Boolean.TRUE, colorPalette.getPersonalColor().getName(), colorPalette.getDescription());
     }
 }

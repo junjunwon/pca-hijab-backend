@@ -17,7 +17,7 @@ public class ColorPaletteServiceImpl implements ColorPaletteService {
     @Override
     public ColorPaletteResponse getColorPalette(ColorPalette.PersonalColor personalColor) {
         return colorPaletteRepository.findByPersonalColor(personalColor)
-                .map(colorPalette -> new ColorPaletteResponse(colorPalette.getPersonalColor().getName(), colorPalette.getDescription()))
+                .map(colorPalette -> new ColorPaletteResponse(Boolean.TRUE, colorPalette.getPersonalColor().getName(), colorPalette.getDescription()))
                 .orElseThrow(() -> new CustomException(NOT_FOUND_PERSONAL_COLOR));
     }
 }

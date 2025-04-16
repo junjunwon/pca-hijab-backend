@@ -7,5 +7,6 @@ import org.springframework.web.multipart.MultipartFile;
 @Getter
 @Setter
 public class ColorAnalysisRequest {
+    private String requestId;
     private MultipartFile image;
 }
