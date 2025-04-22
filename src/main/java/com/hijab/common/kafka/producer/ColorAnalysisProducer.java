@@ -1,6 +1,6 @@
-package com.hijab.kafka.producer;
+package com.hijab.common.kafka.producer;
 
-import com.hijab.kafka.message.KafkaMessageEnvelope;
+import com.hijab.common.kafka.message.KafkaMessageEnvelope;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;

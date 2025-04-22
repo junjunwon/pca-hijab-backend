@@ -1,4 +1,4 @@
-package com.hijab.kafka.message;
+package com.hijab.common.kafka.message;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

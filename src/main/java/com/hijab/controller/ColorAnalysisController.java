@@ -2,8 +2,6 @@ package com.hijab.controller;
 
 import com.hijab.colorAnalysis.model.ColorAnalysisRequest;
 import com.hijab.colorAnalysis.service.ColorAnalysisRecordService;
-import com.hijab.colorAnalysis.service.temp.ColorAnalysisJobService;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -20,13 +18,8 @@ public class ColorAnalysisController {
     private final ColorAnalysisRecordService colorAnalysisRecordService;
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<?> analyzeImage(
-            @ModelAttribute ColorAnalysisRequest analysisRequest,
-            HttpServletRequest request
-    ) {
-//        String requestId = (String) request.getAttribute("requestId");
-        String requestId = analysisRequest.getRequestId();
-        colorAnalysisRecordService.analyzeImage(requestId, analysisRequest.getImage());
+    public ResponseEntity<?> analyzeImage(@ModelAttribute ColorAnalysisRequest analysisRequest) {
+        colorAnalysisRecordService.analyzeImage(analysisRequest.getRequestId(), analysisRequest.getImage());
         return ResponseEntity.ok().build();
     }
 }

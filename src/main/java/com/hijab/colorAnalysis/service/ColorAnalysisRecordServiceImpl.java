@@ -1,12 +1,11 @@
 package com.hijab.colorAnalysis.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hijab.colorAnalysis.dao.ColorAnalysisRecordDAO;
 import com.hijab.colorAnalysis.entity.ColorAnalysisRecord;
-import com.hijab.image.service.ImageService;
 import com.hijab.colorAnalysis.message.ColorAnalysisMessage;
-import com.hijab.kafka.message.KafkaMessageEnvelope;
-import com.hijab.kafka.producer.ColorAnalysisProducer;
+import com.hijab.common.kafka.message.KafkaMessageEnvelope;
+import com.hijab.common.kafka.producer.ColorAnalysisProducer;
+import com.hijab.image.service.ImageService;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
@@ -19,8 +18,6 @@ public class ColorAnalysisRecordServiceImpl implements ColorAnalysisRecordServic
     private final ImageService imageService;
     private final ColorAnalysisRecordDAO colorAnalysisRecordDAO;
     private final ColorAnalysisProducer colorAnalysisProducer;
-
-    private final ObjectMapper objectMapper;
 
     @SneakyThrows
     @Override

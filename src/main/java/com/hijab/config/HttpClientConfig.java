@@ -3,11 +3,13 @@ package com.hijab.config;
 import com.hijab.external.exchange.PcaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.support.RestClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
 @Configuration
+@Profile("!test")
 public class HttpClientConfig {
     @Bean
     public PcaClient fileUploadClient() {

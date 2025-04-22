@@ -1,4 +1,4 @@
-package com.hijab.kafka.consumer;
+package com.hijab.common.kafka.consumer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hijab.colorAnalysis.handler.ColorAnalysisHandler;
@@ -6,7 +6,7 @@ import com.hijab.colorAnalysis.message.ColorAnalysisMessage;
 import com.hijab.colorPalette.model.ColorPaletteResponse;
 import com.hijab.common.exception.CustomException;
 import com.hijab.common.sse.component.SseEmitters;
-import com.hijab.kafka.message.KafkaMessageEnvelope;
+import com.hijab.common.kafka.message.KafkaMessageEnvelope;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;

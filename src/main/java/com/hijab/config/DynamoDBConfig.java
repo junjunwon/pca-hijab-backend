@@ -11,9 +11,11 @@ import com.hijab.common.aws.properties.AwsProperties;
 import org.socialsignin.spring.data.dynamodb.repository.config.EnableDynamoDBRepositories;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 @Configuration
 @EnableDynamoDBRepositories(basePackages = "com.hijab.repository")
+@Profile("!test")
 public class DynamoDBConfig {
 
     private final AwsProperties awsProperties;
