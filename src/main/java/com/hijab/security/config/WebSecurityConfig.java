@@ -134,28 +134,5 @@ public class WebSecurityConfig implements WebMvcConfigurer {
         registry.addViewController("/").setViewName("forward:/index.html");
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
-
-    @Bean
-    public OpenAPI openAPI() {
-        final String securitySchemeName = "Bearer Auth";
-
-        return new OpenAPI()
-            .components(new Components()
-                    .addSecuritySchemes(securitySchemeName, new SecurityScheme()
-                    .name(securitySchemeName)
-                    .type(SecurityScheme.Type.HTTP)
-                    .scheme("bearer")
-                    .bearerFormat("JWT")))
-            .info(apiInfo())
-            .addSecurityItem(new SecurityRequirement()
-                    .addList(securitySchemeName));
-    }
-
-    private Info apiInfo() {
-        return new Info()
-            .title("Agora API")
-            .description("Agora API")
-            .version("1.0.0");
-    }
 }
 
