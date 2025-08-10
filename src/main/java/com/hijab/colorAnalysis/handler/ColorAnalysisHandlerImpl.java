@@ -28,6 +28,7 @@ public class ColorAnalysisHandlerImpl implements ColorAnalysisHandler {
         ColorPalette.PersonalColor color = ColorPalette.PersonalColor.fromValue(response.result());
         ColorPalette colorPalette = colorPaletteDAO.getColorPalette(color);
 
+//        return new ColorPaletteResponse(Boolean.TRUE, "Fall Warm Tone", "Deep and calm colors are your charm! You have a luxurious and composed image, perfect for a Fall Warm Tone.");
         return new ColorPaletteResponse(Boolean.TRUE, colorPalette.getPersonalColor().getName(), colorPalette.getDescription());
     }
 }

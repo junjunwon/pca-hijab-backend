@@ -40,6 +40,12 @@ public class ColorPalette extends Auditing {
     @Comment("팔레트 설명")
     private String description;
 
+    public ColorPalette(PersonalColor personalColor, List<String> colors, String description) {
+        this.personalColor = personalColor;
+        this.colors = colors;
+        this.description = description;
+    }
+
     @Getter
     public enum PersonalColor {
         SPRING("Spring Warm Tone"),
